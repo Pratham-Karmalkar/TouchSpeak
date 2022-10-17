@@ -28,12 +28,12 @@ html body{
 /* Container for Custom Inp */
 
 .containerCustomInp{
-    display: inline-block;
+    display: flexbox;
     flex-wrap: wrap;
     background-color: rgb(22, 146, 236);
     padding: 1%;
     color: #FFF;
-    text-align: left;
+    text-align: center;
     margin: 0px;
 
 }
@@ -44,7 +44,7 @@ html body{
 }
 
 .custInpHeadText{
-    margin-left: 5%;
+    text-align: center;
 }
 
 .custTextInpBox{
@@ -89,8 +89,8 @@ height: 60px;
 @media only screen and (max-width: 600px) {
 
     .containerCustomInp{
-        display: inline-block;
-        justify-content: center;
+        display: flexbox;
+        flex-wrap: wrap;
         background-color: rgb(22, 146, 236);
         padding: 1%;
         color: #FFF;
@@ -99,7 +99,7 @@ height: 60px;
     }
     
    .custInpHeadText{
-    margin-left: 0%;
+    margin-right: 20%;
    }
     
     .custTextInpBox{

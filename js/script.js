@@ -19,10 +19,10 @@ emergencyButton.addEventListener('click',()=>{
 })
 
 
-//help/assistance
-var assistButton = document.querySelector('#helpBtn')
-assistButton.addEventListener('click',()=>{
-    var toSpeak = new SpeechSynthesisUtterance("Can I get some help with this task");
+//greet
+var greetButton = document.querySelector('#greetBtn')
+greetButton.addEventListener('click',()=>{
+    var toSpeak = new SpeechSynthesisUtterance("Hi,Welcome to McDonald's how may I help you today");
     var selectedVoiceName = voiceList.selectedOptions[0].getAttribute('data-name');
     voices.forEach((voice)=>{
         if(voice.name === selectedVoiceName){
@@ -48,9 +48,9 @@ noUnderstandButton.addEventListener('click',()=>{
 
 
 //greet
-var greetButton = document.querySelector('#greetBtn')
-greetButton.addEventListener('click',()=>{
-    var toSpeak = new SpeechSynthesisUtterance("Hello, nice to meet you");
+var elseButton = document.querySelector('#elseBtn')
+elseButton.addEventListener('click',()=>{
+    var toSpeak = new SpeechSynthesisUtterance("Would you like anything else from the menu?");
     var selectedVoiceName = voiceList.selectedOptions[0].getAttribute('data-name');
     voices.forEach((voice)=>{
         if(voice.name === selectedVoiceName){
@@ -61,9 +61,9 @@ greetButton.addEventListener('click',()=>{
 })
 
 //bye
-var byeButton = document.querySelector('#byeBtn')
-byeButton.addEventListener('click',()=>{
-    var toSpeak = new SpeechSynthesisUtterance("Goodbye, nice meeting you");
+var mealButton = document.querySelector('#mealBtn')
+mealButton.addEventListener('click',()=>{
+    var toSpeak = new SpeechSynthesisUtterance("Would you like to make it a meal");
     var selectedVoiceName = voiceList.selectedOptions[0].getAttribute('data-name');
     voices.forEach((voice)=>{
         if(voice.name === selectedVoiceName){
@@ -102,9 +102,9 @@ noButton.addEventListener('click',()=>{
 
 
 //name
-var nameButton = document.querySelector('#nameBtn')
-nameButton.addEventListener('click',()=>{
-    var toSpeak = new SpeechSynthesisUtterance("What is your name?");
+var nicDayButton = document.querySelector('#niceDayBtn')
+nicDayButton.addEventListener('click',()=>{
+    var toSpeak = new SpeechSynthesisUtterance("Here is your reciept, Thank you for ordering from McDonald's, Have a nice day.");
     var selectedVoiceName = voiceList.selectedOptions[0].getAttribute('data-name');
     voices.forEach((voice)=>{
         if(voice.name === selectedVoiceName){
@@ -117,7 +117,7 @@ nameButton.addEventListener('click',()=>{
 //name
 var goodButton = document.querySelector('#everyThingGoodBtn')
 goodButton.addEventListener('click',()=>{
-    var toSpeak = new SpeechSynthesisUtterance("Is everything good?");
+    var toSpeak = new SpeechSynthesisUtterance("Your  order is displayed here, would that be all?");
     var selectedVoiceName = voiceList.selectedOptions[0].getAttribute('data-name');
     voices.forEach((voice)=>{
         if(voice.name === selectedVoiceName){
@@ -126,6 +126,8 @@ goodButton.addEventListener('click',()=>{
     });
     synth.speak(toSpeak);
 })
+
+
 
 
 

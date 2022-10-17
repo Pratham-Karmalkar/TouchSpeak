@@ -8,12 +8,7 @@ import (
 	_ "github.com/go-sql-driver/mysql"
 )
 
-type User struct {
-	email string `json:"name"`
-	pwd   string `json:"password"`
-}
-
-func main() {
+func locaDatabase() {
 	var (
 		uid         int
 		uname, upwd string
@@ -57,6 +52,13 @@ func main() {
 
 }
 
-func dbHandler() {
-
+func insert(uid int, uname string, upwd string) {
+	db, err := sql.Open("mysql", "root:mybench@tcp(localhost:3306)/vforv")
+	fmt.Scan(&uid, uname, &upwd)
+	insert, err := db.Query("INSERT INTO `vforv`.`users` (`uid`, `uname`, `upwd`) VALUES ('?', '?', '?');")
+	insert.Exec()
+	if err != nil {
+		panic(err.Error())
+	}
+	defer insert.Close()
 }
