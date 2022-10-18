@@ -131,7 +131,7 @@ noButton.addEventListener('click',()=>{
 //name
 var nicDayButton = document.querySelector('#niceDayBtn')
 nicDayButton.addEventListener('click',()=>{
-    var toSpeak = new SpeechSynthesisUtterance("Here is your reciept, Thank you for ordering from McDonald's, Have a nice day.");
+    var toSpeak = new SpeechSynthesisUtterance("Here is your receipt, Thank you for ordering from McDonald's, Have a nice day.");
     var selectedVoiceName = voiceList.selectedOptions[0].getAttribute('data-name');
     voices.forEach((voice)=>{
         if(voice.name === selectedVoiceName){
