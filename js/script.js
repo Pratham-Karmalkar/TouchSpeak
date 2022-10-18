@@ -22,7 +22,7 @@ emergencyButton.addEventListener('click',()=>{
 //greet
 var greetButton = document.querySelector('#greetBtn')
 greetButton.addEventListener('click',()=>{
-    var toSpeak = new SpeechSynthesisUtterance("Hi,Welcome to McDonald's how may I help you today");
+    var toSpeak = new SpeechSynthesisUtterance("Hi,Welcome to McDonald's, as I cannot speak I would be communicating with you through this application, how may I help you today");
     var selectedVoiceName = voiceList.selectedOptions[0].getAttribute('data-name');
     voices.forEach((voice)=>{
         if(voice.name === selectedVoiceName){
@@ -37,6 +37,33 @@ greetButton.addEventListener('click',()=>{
 var noUnderstandButton = document.querySelector('#noUnderstandBtn')
 noUnderstandButton.addEventListener('click',()=>{
     var toSpeak = new SpeechSynthesisUtterance("I didn't understand what you said, can you please repeat");
+    var selectedVoiceName = voiceList.selectedOptions[0].getAttribute('data-name');
+    voices.forEach((voice)=>{
+        if(voice.name === selectedVoiceName){
+            toSpeak.voice = voice;
+        }
+    });
+    synth.speak(toSpeak);
+})
+
+
+//do not serve
+var notServeButton = document.querySelector('#notServeBtn')
+notServeButton.addEventListener('click',()=>{
+    var toSpeak = new SpeechSynthesisUtterance("I am sorry,we do not serve that.");
+    var selectedVoiceName = voiceList.selectedOptions[0].getAttribute('data-name');
+    voices.forEach((voice)=>{
+        if(voice.name === selectedVoiceName){
+            toSpeak.voice = voice;
+        }
+    });
+    synth.speak(toSpeak);
+})
+
+//do not available
+var notAvailButton = document.querySelector('#notAvailBtn')
+notAvailButton.addEventListener('click',()=>{
+    var toSpeak = new SpeechSynthesisUtterance("I'm sorry,We do not have it available right now.");
     var selectedVoiceName = voiceList.selectedOptions[0].getAttribute('data-name');
     voices.forEach((voice)=>{
         if(voice.name === selectedVoiceName){
