@@ -104,7 +104,7 @@ mealButton.addEventListener('click',()=>{
 //yes
 var yesButton = document.querySelector('#yesBtn')
 yesButton.addEventListener('click',()=>{
-    var toSpeak = new SpeechSynthesisUtterance("YES");
+    var toSpeak = new SpeechSynthesisUtterance("Yes, Shore");
     var selectedVoiceName = voiceList.selectedOptions[0].getAttribute('data-name');
     voices.forEach((voice)=>{
         if(voice.name === selectedVoiceName){
